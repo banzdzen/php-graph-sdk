@@ -13,10 +13,10 @@ class FacebookSocks
         return new Facebook([
             'app_id' => 1,
             'app_secret' => 1,
-            'http_client_handler' => new FacebookCurlOptsHttpClient($fbCurl, [
+            'http_client_handler' => new FacebookCurlOptsHttpClient($fbCurl, $socks ? [
                     CURLOPT_PROXY => $socks,
                     CURLOPT_PROXYTYPE => CURLPROXY_SOCKS5_HOSTNAME,
-                ]
+                ] : []
             ),
             'default_access_token' => $accessToken,
             'default_graph_version' => $version,
