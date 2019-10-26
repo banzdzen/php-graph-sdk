@@ -7,7 +7,7 @@ use Facebook\HttpClients\FacebookCurl;
 
 class FacebookSocks
 {
-    public static function createClient($accessToken, $socks, $version = 'v3.2')
+    public static function createClient($accessToken, $socks, $version = 'v4.0')
     {
         $fbCurl = new FacebookCurl;
         return new Facebook([
